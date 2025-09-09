@@ -35,7 +35,7 @@ function play() {
     }
 
     chance--;
-    chanceArea.textContent = chance;
+    chanceArea.innerHTML = `남은 기회:${chance}`;
 
     if (userValue < conputerNum) {
         resultArea.textContent = "⬆️좀 더 올려봐⬆️"
@@ -60,7 +60,14 @@ function play() {
 
 function reset() {
     userInput.value = "";
+    chance = 5; 
+    gameOver = false;
+    history = [];
+    chanceArea.textContent = chance;
+    resultArea.textContent = "";
+    playBtn.disabled = false;
     randomPick();
 }
+
 
 randomPick();
